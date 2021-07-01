@@ -22,7 +22,7 @@ L.tileLayer(
 async function createMovingMarker(from, to) {
 
   let waypoints = fetch(
-    `http://router.project-osrm.org/route/v1/driving/${from["lon"]},${from["lat"]};${to["lon"]},${to["lat"]}?overview=full&geometries=geojson`
+    `https://router.project-osrm.org/route/v1/driving/${from["lon"]},${from["lat"]};${to["lon"]},${to["lat"]}?overview=full&geometries=geojson`
   )
     .then((response) => response.json())
     .then((data) => data["routes"][0]["geometry"]["coordinates"])
